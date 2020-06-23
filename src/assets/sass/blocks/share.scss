@@ -1,0 +1,21 @@
+.share {
+    
+    &__link {
+        display: inline-block;
+    }
+
+    &__icon {
+        display: inline-block;
+        margin-left: 5px;
+        height: 30px;
+        width: 30px;
+        fill: lighten($accent-gray,10%);
+        transition: fill .1s linear;
+        border-radius: $radius;
+
+        &:hover {
+            fill: $accent-gray;
+            transition: fill .1s linear;
+        }
+    }
+}

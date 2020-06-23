@@ -1,0 +1,41 @@
+.sub-mail {
+    margin-top: 20px;
+    padding: 1.5rem;
+    background-color: $accent-gray;
+    border-radius: $radius;
+    text-align: center;
+
+    &__icon {
+        height: 40px;
+        width: 40px;
+        fill: $white;
+        margin-bottom: 10px;
+    }
+
+    &__text {
+        font-size: .9rem;
+        color: $light-gray;
+    }
+
+    &__form {
+        margin-top: 1rem;
+        display: block;
+        background-color: lighten($accent-gray,10%);
+        border: 1px solid darken($light-gray,30%);
+        border-radius: $radius;
+        padding: 10px 15px;
+        font-size: 1rem;
+        width: 100%;
+        color: $light-gray;
+        outline: none;
+
+        &::placeholder {
+            color: darken($light-gray,30%);
+        }
+    }
+
+    &__button {
+        width: 100%;
+        margin-top: 1rem;
+    }
+}

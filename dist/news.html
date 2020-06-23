@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MishkaBlog News</title>
+        <link rel="stylesheet" href="/assets/css/style.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script></head> 
+<body>
+    <svg style="display: none;">
+        <symbol id="eye" viewBox="0 0 511.999 511.999">
+            <g>
+                <path d="M508.745,246.041c-4.574-6.257-113.557-153.206-252.748-153.206S7.818,239.784,3.249,246.035
+        			c-4.332,5.936-4.332,13.987,0,19.923c4.569,6.257,113.557,153.206,252.748,153.206s248.174-146.95,252.748-153.201
+        			C513.083,260.028,513.083,251.971,508.745,246.041z M255.997,385.406c-102.529,0-191.33-97.533-217.617-129.418
+        			c26.253-31.913,114.868-129.395,217.617-129.395c102.524,0,191.319,97.516,217.617,129.418
+                    C447.361,287.923,358.746,385.406,255.997,385.406z"/>
+                    <path d="M255.997,154.725c-55.842,0-101.275,45.433-101.275,101.275s45.433,101.275,101.275,101.275
+        			s101.275-45.433,101.275-101.275S311.839,154.725,255.997,154.725z M255.997,323.516c-37.23,0-67.516-30.287-67.516-67.516
+        			s30.287-67.516,67.516-67.516s67.516,30.287,67.516,67.516S293.227,323.516,255.997,323.516z"/>
+                    
+            </g>
+        </symbol>
+    
+        <symbol id="comment" viewBox="0 0 60 60">
+            <g>
+                <path d="M54,2H6C2.748,2,0,4.748,0,8v33c0,3.252,2.748,6,6,6h8v10c0,0.413,0.254,0.784,0.639,0.933C14.757,57.978,14.879,58,15,58
+    	c0.276,0,0.547-0.115,0.74-0.327L25.442,47H54c3.252,0,6-2.748,6-6V8C60,4.748,57.252,2,54,2z M58,41c0,2.168-1.832,4-4,4H27.179
+    	l3.579-4.161c0.36-0.418,0.313-1.05-0.106-1.41c-0.418-0.36-1.051-0.312-1.411,0.106l-4.998,5.811L16,54.414V46c0-0.552-0.448-1-1-1
+    	H6c-2.168,0-4-1.832-4-4V8c0-2.168,1.832-4,4-4h48c2.168,0,4,1.832,4,4V41z"/>
+                    
+            </g>
+        </symbol>
+    
+        <symbol id="email" viewBox="0 0 512 512">
+            <g>
+                <path d="m90.779 134.95-44.249 41.089 44.249 41.094z"/><path d="m420.779 134.539v84.835l45.679-42.419z"/><path d="m333.037 341.795 147.963 147.963v-285.367z"/><path d="m31 202.558v289.165l149.929-149.929z"/><path d="m256.982 412.424-54.056-50.201-149.778 149.777h407.668l-149.776-149.776z"/><path d="m390.779 247.233v-247.233h-270v244.992l136.172 126.49zm-209.779-175.233h150v30h-150zm0 80h150v30h-150z"/>
+            </g>
+        </symbol>
+    
+        <symbol id="zen-f" viewBox="0 0 48 48">
+            <g>
+                <path xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" d="M23.7354 0C13.8428 0.000940338 6.98806 0.0338522 3.46947 3.46985C0.0336545 6.98765 0.000735498 14.1643 0.000735498 23.7351C10.628 23.4144 15.4878 23.1483 19.3638 19.3634C23.1485 15.4874 23.4147 10.6277 23.7354 0ZM3.46886 44.5305C0.0330411 41.0127 0.00012207 33.8361 0.00012207 24.2653C10.6274 24.586 15.4872 24.8521 19.3632 28.637C23.1479 32.513 23.4141 37.3727 23.7348 47.9995C13.8422 47.9995 6.98745 47.9675 3.46886 44.5305ZM24.2653 47.9995C24.586 37.3727 24.8522 32.513 28.637 28.637C32.5129 24.8521 37.3727 24.586 48 24.2653C47.999 33.8361 47.9661 41.0127 44.5303 44.5305C41.0117 47.9675 34.158 47.9995 24.2653 47.9995ZM24.2653 0C24.586 10.6277 24.8522 15.4874 28.637 19.3634C32.5129 23.1483 37.3727 23.4144 48 23.7351C47.999 14.1643 47.9661 6.98765 44.5303 3.46985C41.0117 0.0338522 34.158 0.000940338 24.2653 0Z" fill="#2C3036"/>
+                <path xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" d="M28.637 28.637C24.8522 32.513 24.586 37.3727 24.2653 47.9995C34.158 47.9995 41.0117 47.9675 44.5303 44.5305C47.9661 41.0127 47.999 33.8361 48 24.2653C37.3728 24.586 32.5129 24.8521 28.637 28.637ZM0.00012207 24.2653C0.00012207 33.8361 0.0330411 41.0127 3.46886 44.5305C6.98745 47.9675 13.8422 47.9995 23.7348 47.9995C23.4141 37.3727 23.1479 32.513 19.3632 28.637C15.4872 24.8521 10.6274 24.586 0.00012207 24.2653ZM23.7354 0C13.8428 0.000940338 6.98806 0.0338522 3.46947 3.46985C0.0336545 6.98765 0.000735498 14.1643 0.000735498 23.7351C10.628 23.4144 15.4878 23.1483 19.3638 19.3634C23.1485 15.4874 23.4147 10.6277 23.7354 0ZM28.637 19.3634C24.8522 15.4874 24.586 10.6277 24.2653 0C34.158 0.000940338 41.0117 0.0338522 44.5303 3.46985C47.9661 6.98765 47.999 14.1643 48 23.7351C37.3728 23.4144 32.5129 23.1483 28.637 19.3634Z" fill="url(#paint0_linear)"/>
+                <path xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" d="M47.9999 24.2655V24.0003V23.736C37.3726 23.4144 32.5128 23.1493 28.6368 19.3635C24.8521 15.4883 24.5859 10.6287 24.2652 0.000976562H23.9999H23.7347C23.414 10.6287 23.1478 15.4883 19.363 19.3635C15.487 23.1493 10.6272 23.4144 0 23.736V24.0003V24.2655C10.6272 24.587 15.487 24.8522 19.363 28.6371C23.1478 32.5132 23.414 37.3728 23.7347 48.0005H23.9999H24.2652C24.5859 37.3728 24.8521 32.5132 28.6368 28.6371C32.5128 24.8522 37.3726 24.587 47.9999 24.2655Z" fill="white"/>
+                <defs xmlns="http://www.w3.org/2000/svg">
+                    <linearGradient id="paint0_linear" x1="48" y1="47.9995" x2="48" y2="0" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="white" stop-opacity="0.01"/>
+                    <stop offset="0.47509" stop-color="white" stop-opacity="0.01"/>
+                    <stop offset="0.76042" stop-color="white" stop-opacity="0.04271"/>
+                    <stop offset="0.99531" stop-color="white" stop-opacity="0.09855"/>
+                    <stop offset="1" stop-color="white" stop-opacity="0.1"/>
+                    </linearGradient>
+                    </defs>
+            </g>
+        </symbol>
+    
+        <symbol id="instagram-f" viewBox="0 0 24 24">
+            <g>
+                <path d="m12.004 5.838c-3.403 0-6.158 2.758-6.158 6.158 0 3.403 2.758 6.158 6.158 6.158 3.403 0 6.158-2.758 6.158-6.158 0-3.403-2.758-6.158-6.158-6.158zm0 10.155c-2.209 0-3.997-1.789-3.997-3.997s1.789-3.997 3.997-3.997 3.997 1.789 3.997 3.997c.001 2.208-1.788 3.997-3.997 3.997z"/><path d="m16.948.076c-2.208-.103-7.677-.098-9.887 0-1.942.091-3.655.56-5.036 1.941-2.308 2.308-2.013 5.418-2.013 9.979 0 4.668-.26 7.706 2.013 9.979 2.317 2.316 5.472 2.013 9.979 2.013 4.624 0 6.22.003 7.855-.63 2.223-.863 3.901-2.85 4.065-6.419.104-2.209.098-7.677 0-9.887-.198-4.213-2.459-6.768-6.976-6.976zm3.495 20.372c-1.513 1.513-3.612 1.378-8.468 1.378-5 0-7.005.074-8.468-1.393-1.685-1.677-1.38-4.37-1.38-8.453 0-5.525-.567-9.504 4.978-9.788 1.274-.045 1.649-.06 4.856-.06l.045.03c5.329 0 9.51-.558 9.761 4.986.057 1.265.07 1.645.07 4.847-.001 4.942.093 6.959-1.394 8.453z"/><circle cx="18.406" cy="5.595" r="1.439"/>
+            </g>
+        </symbol>
+    
+        <symbol id="facebook-f" viewBox="0 0 24 24">
+            <g>
+                <path d="m15.997 3.985h2.191v-3.816c-.378-.052-1.678-.169-3.192-.169-3.159 0-5.323 1.987-5.323 5.639v3.361h-3.486v4.266h3.486v10.734h4.274v-10.733h3.345l.531-4.266h-3.877v-2.939c.001-1.233.333-2.077 2.051-2.077z"/>
+            </g>
+        </symbol>
+    
+        <symbol id="vk-f" viewBox="0 0 24 24">
+            <g>
+                <path d="m19.915 13.028c-.388-.49-.277-.708 0-1.146.005-.005 3.208-4.431 3.538-5.932l.002-.001c.164-.547 0-.949-.793-.949h-2.624c-.668 0-.976.345-1.141.731 0 0-1.336 3.198-3.226 5.271-.61.599-.892.791-1.225.791-.164 0-.419-.192-.419-.739v-5.105c0-.656-.187-.949-.74-.949h-4.126c-.419 0-.668.306-.668.591 0 .622.945.765 1.043 2.515v3.797c0 .832-.151.985-.486.985-.892 0-3.057-3.211-4.34-6.886-.259-.713-.512-1.001-1.185-1.001h-2.625c-.749 0-.9.345-.9.731 0 .682.892 4.073 4.148 8.553 2.17 3.058 5.226 4.715 8.006 4.715 1.671 0 1.875-.368 1.875-1.001 0-2.922-.151-3.198.686-3.198.388 0 1.056.192 2.616 1.667 1.783 1.749 2.076 2.532 3.074 2.532h2.624c.748 0 1.127-.368.909-1.094-.499-1.527-3.871-4.668-4.023-4.878z"/>
+            </g>
+        </symbol>
+    
+        <symbol id="close" viewBox="0 0 24 24">
+            <g>
+                <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"></path>
+            </g>
+        </symbol>
+    
+        <!-- for article -->
+    
+        <symbol id="vk-art" viewBox="0 0 455.731 455.731">
+            <g>
+                <path d="M0,0v455.731h455.731V0H0z M365.342,252.874c10.995,11.342,22.766,21.954,33.414,33.605
+    	c7.738,8.477,14.9,17.674,21.032,27.355c7.756,12.245,2.965,23.778-11.524,25.832c-9.115,1.286-53.641,0.01-55.942,0
+    	c-11.971-0.054-22.464-4.207-30.914-12.336c-9.398-9.052-17.939-18.979-26.963-28.423c-2.719-2.847-5.621-5.575-8.75-7.957
+    	c-7.382-5.63-14.627-4.38-18.076,4.289c-2.947,7.446-5.493,27-5.612,28.669c-0.62,8.732-6.177,14.298-15.959,14.836
+    	c-28.24,1.533-55.605-1.615-81.098-15.274c-21.607-11.57-38.861-27.93-53.807-47.009c-23.742-30.304-42.495-63.615-59.616-97.904
+    	c-0.875-1.753-18.216-38.653-18.682-40.396c-1.549-5.836-0.104-11.411,4.827-13.33c3.074-1.197,60.248-0.004,61.199,0.047
+    	c9.123,0.493,15.345,4.342,19.187,13.812c10.922,26.972,24.764,52.402,42.995,75.231c2.418,3.039,5.466,5.739,8.677,7.938
+    	c4.69,3.221,9.115,2.089,11.022-3.276c2.017-5.63,3.868-17.04,3.978-22.952c0.301-15.448-0.045-25.572-0.875-41.001
+    	c-0.538-9.882-4.051-18.559-18.587-21.178c-4.489-0.812-4.906-4.507-2.022-8.193c6.004-7.674,14.368-8.897,23.438-9.381
+    	c14.7-0.794,29.454-0.146,44.172,0c5.995,0.055,12.026,0.538,17.93,1.825c7.701,1.679,11.825,7.081,13.094,14.599
+    	c0.657,3.878,0.995,7.865,0.903,11.789c-0.383,16.862-1.195,33.715-1.387,50.568c-0.082,6.615,0.401,13.395,1.816,19.837
+    	c1.98,8.979,8.093,11.232,14.344,4.745c7.938-8.24,14.937-17.51,21.506-26.926c11.935-17.127,20.849-35.923,28.523-55.303
+    	c3.969-10,7.008-12.172,17.765-12.199c20.22-0.046,40.44-0.064,60.66,0c3.586,0.018,7.336,0.356,10.721,1.432
+    	c5.493,1.752,7.674,6.232,6.387,11.917c-3.002,13.322-10.201,24.645-17.911,35.531c-12.373,17.464-25.339,34.509-38.003,51.772
+    	c-1.615,2.199-3.038,4.544-4.362,6.926C358.107,240.948,358.435,245.747,365.342,252.874z"/>
+            </g>
+        </symbol>
+    
+        <symbol id="telegram-art" viewBox="0 0 455.731 455.731">
+            <g>
+                <path d="M316.244,149.903L149.082,253.579c-2.943,1.825-4.282,5.409-3.255,8.717l22.423,72.253
+    		c0.471,1.518,2.683,1.309,2.861-0.271l5.45-48.448c0.21-1.872,1.108-3.599,2.519-4.847l141.556-125.177
+    		C324.025,152.81,320.089,147.518,316.244,149.903z"/>
+    	<path d="M0,0v455.731h455.731V0H0z M379.882,118.418l-52.031,248.76c-2.442,11.673-16.133,16.916-25.747,9.859l-78.559-57.665
+    		l-40.039,40.881c-7.027,7.175-19.166,4.271-22.185-5.308l-28.901-91.706l-77.441-22.868c-10.16-3-10.759-17.165-0.888-21.012
+    		l304.753-118.759C370.444,96.08,382.431,106.232,379.882,118.418z"/>
+            </g>
+        </symbol>
+    
+        <symbol id="facebook-art" viewBox="0 0 455.73 455.73">
+            <g>
+                <path d="M0,0v455.73h242.704V279.691h-59.33v-71.864h59.33v-60.353c0-43.893,35.582-79.475,79.475-79.475h62.025v64.622h-44.382
+    	c-13.947,0-25.254,11.307-25.254,25.254v49.953h68.521l-9.47,71.864h-59.051V455.73H455.73V0H0z"/>
+            </g>
+        </symbol>
+    
+        <symbol id="twitter-art" viewBox="0 0 455.731 455.731">
+            <g>
+                <path d="M0,0v455.731h455.731V0H0z M361.271,163.944c0.104,2.676,0.161,5.362,0.161,8.067c0,108.339-87.831,196.18-196.18,196.18
+    	c-38.568,0-74.545-11.132-104.875-30.368c-0.007-0.001-0.014-0.002-0.02-0.003l0.02,0.003c0,0,0,0,0,0
+    	c59.293,8.843,101.06-28.888,101.06-28.888c-52.832-4.109-63.271-48.077-63.271-48.077c18.667,3.16,30.368-1.272,30.368-1.272
+    	c-59.465-13.912-54.407-68.329-54.407-68.329c13.77,8.228,29.733,8.864,29.733,8.864c-52.509-46.188-19.607-91.105-19.607-91.105
+    	c55.052,66.668,135.975,71.204,141.289,71.423c-1.167-5.011-1.784-10.23-1.784-15.592c0-37.998,30.814-68.803,68.841-68.803
+    	c19.825,0,37.685,8.37,50.25,21.78c3.483-0.977,6.861-2.031,10.088-3.103c19.493-6.501,33.415-13.932,33.415-13.932
+    	c-3.359,20.129-28.176,37.021-29.951,38.207c-0.066,0.047-0.104,0.066-0.104,0.066c0.038,0,0.085-0.009,0.123-0.009
+    	c19.265-1.927,38.948-10.107,38.948-10.107C389.428,141.433,365.19,160.859,361.271,163.944z"/>
+            </g>
+        </symbol>
+    </svg>    <div class="page page__reviews page__guides"></div>
+        
+        <header class="header">
+        
+            <div class="container">
+                <div class="header__inner">
+                    <a class="logo__link" href="index.html">
+                        <img src="/assets/img/logofordark-1.svg" alt="" class="logo">
+                    </a>
+                    <div class="menu-burger">
+                        <span class="menu-burger__body"></span>
+                    </div>
+                    <nav class="nav">
+                        <ul class="nav__list">
+                            <li class="nav__item"><a class="nav__link" href="news.html">Новости</a></li>
+                            <li class="nav__item"><a class="nav__link" href="news.html">Обзоры</a></li>
+                            <li class="nav__item"><a class="nav__link" href="news.html">Гайды</a></li>
+                            <li class="nav__item"><a class="nav__link nav__link--orange" href="">В магазин</a></li>
+                        </ul>
+                    </nav>
+        
+                    <form class="search">
+                        <input class="search__input" type="text" placeholder="Поиск по блогу...">
+                        <button class="search__button" type="button">
+                            <img class="search__img" src="/assets/img/search.svg" alt="">
+                            <svg class="search__close">
+                                <use xlink:href="#close"></use>
+                            </svg>
+                        </button>
+                      </form>
+                </div>
+            </div>
+            
+        </header>    
+        <div class="main-grid__upper">
+            <div class="container container--disable">
+                <div class="main-grid">
+                    <div class="main-grid__left">
+                        <div class="main-grid__item main-grid__item--big post-card">
+                            <a class="post-card__link" href="article.html">
+                                <img class="post-card__img" src="/assets/img/smartphones.jpg"></img>
+                                <div class="post-card__overlay"></div>
+                            </a>
+                            <div class="post-card__body">
+                                <a class="post-card__title post-card__title--xl" href="article.html">Сравнение ручных пылесосов Xiaomi Dreame:
+                                    V9, V9P, V10, V10P, XR</a>
+                                <div class="post-card__info info-card">
+                                    <div class="info-card__item info-card__date">13.05.2020</div>
+                                    <div class="info-card__item info-card__views">
+                                        <span>
+                                            <svg class="info-card__icon info-card__icon-eye">
+                                                <use xlink:href="#eye"></use>
+                                            </svg>
+                                        </span>
+                                        1245
+                                    </div>
+                                    <div class="info-card__item info-card__comments">
+                                        <span>
+                                            <svg class="info-card__icon info-card__icon-comment">
+                                                <use xlink:href="#comment"></use>
+                                            </svg>
+                                        </span>
+                                        3
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-grid__right">
+                        <div class="main-grid__item post-card">
+                            <a class="post-card__link" href="article.html">
+                                <img class="post-card__img" src="/assets/img/smartphones.jpg"></img>
+                                <div class="post-card__overlay"></div>
+                            </a>
+                            <div class="post-card__body">
+                                <a class="post-card__title" href="article.html">Сравнение ручных пылесосов Xiaomi Dreame: V9, V9P, V10, V10P,
+                                    XR</a>
+                                    <div class="post-card__info info-card info-card--hidden">
+                                        <div class="info-card__item info-card__date">13.05.2020</div>
+                                        <div class="info-card__item info-card__views">
+                                            <span>
+                                                <svg class="info-card__icon info-card__icon-eye">
+                                                    <use xlink:href="#eye"></use>
+                                                </svg>
+                                            </span>
+                                            1245
+                                        </div>
+                                        <div class="info-card__item info-card__comments">
+                                            <span>
+                                                <svg class="info-card__icon info-card__icon-comment">
+                                                    <use xlink:href="#comment"></use>
+                                                </svg>
+                                            </span>
+                                            3
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+        
+                        <div class="main-grid__item post-card">
+                            <a class="post-card__link" href="article.html">
+                                <img class="post-card__img" src="/assets/img/smartphones.jpg"></img>
+                                <div class="post-card__overlay"></div>
+                            </a>
+                            <div class="post-card__body">
+                                <a class="post-card__title" href="article.html">Сравнение ручных пылесосов Xiaomi Dreame: V9, V9P, V10, V10P,
+                                    XR</a>
+                                    <div class="post-card__info info-card info-card--hidden">
+                                        <div class="info-card__item info-card__date">13.05.2020</div>
+                                        <div class="info-card__item info-card__views">
+                                            <span>
+                                                <svg class="info-card__icon info-card__icon-eye">
+                                                    <use xlink:href="#eye"></use>
+                                                </svg>
+                                            </span>
+                                            1245
+                                        </div>
+                                        <div class="info-card__item info-card__comments">
+                                            <span>
+                                                <svg class="info-card__icon info-card__icon-comment">
+                                                    <use xlink:href="#comment"></use>
+                                                </svg>
+                                            </span>
+                                            3
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        
+        <div class="content-wrapper">
+            <div class="container">
+                <div class="content-wrapper__inner">
+                    <div class="content-wrapper__main main">
+        
+                        <!-- News -->
+        
+                        <div class="news">
+                            <div class="section-heading">
+                                <h2 class="section-heading__title">
+                                    <a class="section-heading__link" href="news.html">Новости</a>
+                                </h2>
+                                <div class="section-heading__filter">
+                                    <a class="section-heading__btn section-heading__btn--active" href="#">Последние</a>
+                                    <a class="section-heading__btn" href="#">Популярные</a>
+                                </div>
+                            </div>
+        
+                            <div class="article__after-cards next-posts">
+            
+                                <div class="next-posts__inner">
+            
+                                    <div class="next-posts__item post-card-2">
+                                        <a class="post-card-2__img-link" href="article.html">
+                                            <img class="post-card-2__img" src="/assets/img/xiaomi-brand.jpg"></img>
+                                        </a>
+                                        <a class="post-card-2__title" href="article.html">Сравнение ручных пылесосов Xiaomi Dreame: V9,
+                                            V9P, V10, V10P, XR</a>
+                                        <div class="info-card">
+                                            <div class="info-card__item info-card__date info-card__item--black">13.05.2020</div>
+                                            <div class="info-card__item info-card__views info-card__item--black">
+                                                <span>
+                                                    <svg class="info-card__icon info-card__icon--black info-card__icon-eye">
+                                                        <use xlink:href="#eye"></use>
+                                                    </svg>
+                                                </span>
+                                                1245
+                                            </div>
+                                            <div class="info-card__item info-card__comments  info-card__item--black">
+                                                <span>
+                                                    <svg class="info-card__icon info-card__icon--black info-card__icon-comment">
+                                                        <use xlink:href="#comment"></use>
+                                                    </svg>
+                                                </span>
+                                                3
+                                            </div>
+                                        </div>
+                                    </div>
+            
+                                    <div class="next-posts__item post-card-2">
+                                        <a class="post-card-2__img-link" href="article.html">
+                                            <img class="post-card-2__img" src="/assets/img/xiaomi-brand.jpg"></img>
+                                        </a>
+                                        <a class="post-card-2__title" href="article.html">Сравнение ручных пылесосов Xiaomi Dreame: V9,
+                                            V9P, V10, V10P, XR</a>
+                                        <div class="info-card">
+                                            <div class="info-card__item info-card__date info-card__item--black">13.05.2020</div>
+                                            <div class="info-card__item info-card__views info-card__item--black">
+                                                <span>
+                                                    <svg class="info-card__icon info-card__icon--black info-card__icon-eye">
+                                                        <use xlink:href="#eye"></use>
+                                                    </svg>
+                                                </span>
+                                                1245
+                                            </div>
+                                            <div class="info-card__item info-card__comments  info-card__item--black">
+                                                <span>
+                                                    <svg class="info-card__icon info-card__icon--black info-card__icon-comment">
+                                                        <use xlink:href="#comment"></use>
+                                                    </svg>
+                                                </span>
+                                                3
+                                            </div>
+                                        </div>
+                                    </div>
+            
+                                    <div class="next-posts__item post-card-2">
+                                        <a class="post-card-2__img-link" href="article.html">
+                                            <img class="post-card-2__img" src="/assets/img/xiaomi-brand.jpg"></img>
+                                        </a>
+                                        <a class="post-card-2__title" href="article.html">Сравнение ручных пылесосов Xiaomi Dreame: V9,
+                                            V9P, V10, V10P, XR</a>
+                                        <div class="info-card">
+                                            <div class="info-card__item info-card__date info-card__item--black">13.05.2020</div>
+                                            <div class="info-card__item info-card__views info-card__item--black">
+                                                <span>
+                                                    <svg class="info-card__icon info-card__icon--black info-card__icon-eye">
+                                                        <use xlink:href="#eye"></use>
+                                                    </svg>
+                                                </span>
+                                                1245
+                                            </div>
+                                            <div class="info-card__item info-card__comments  info-card__item--black">
+                                                <span>
+                                                    <svg class="info-card__icon info-card__icon--black info-card__icon-comment">
+                                                        <use xlink:href="#comment"></use>
+                                                    </svg>
+                                                </span>
+                                                3
+                                            </div>
+                                        </div>
+                                    </div>
+            
+                                    <div class="next-posts__item post-card-2">
+                                        <a class="post-card-2__img-link" href="article.html">
+                                            <img class="post-card-2__img" src="/assets/img/xiaomi-brand.jpg"></img>
+                                        </a>
+                                        <a class="post-card-2__title" href="article.html">Сравнение ручных пылесосов Xiaomi Dreame: V9,
+                                            V9P, V10, V10P, XR</a>
+                                        <div class="info-card">
+                                            <div class="info-card__item info-card__date info-card__item--black">13.05.2020</div>
+                                            <div class="info-card__item info-card__views info-card__item--black">
+                                                <span>
+                                                    <svg class="info-card__icon info-card__icon--black info-card__icon-eye">
+                                                        <use xlink:href="#eye"></use>
+                                                    </svg>
+                                                </span>
+                                                1245
+                                            </div>
+                                            <div class="info-card__item info-card__comments  info-card__item--black">
+                                                <span>
+                                                    <svg class="info-card__icon info-card__icon--black info-card__icon-comment">
+                                                        <use xlink:href="#comment"></use>
+                                                    </svg>
+                                                </span>
+                                                3
+                                            </div>
+                                        </div>
+                                    </div>
+        
+                                    <div class="next-posts__item post-card-2">
+                                        <a class="post-card-2__img-link" href="article.html">
+                                            <img class="post-card-2__img" src="/assets/img/xiaomi-brand.jpg"></img>
+                                        </a>
+                                        <a class="post-card-2__title" href="article.html">Сравнение ручных пылесосов Xiaomi Dreame: V9,
+                                            V9P, V10, V10P, XR</a>
+                                        <div class="info-card">
+                                            <div class="info-card__item info-card__date info-card__item--black">13.05.2020</div>
+                                            <div class="info-card__item info-card__views info-card__item--black">
+                                                <span>
+                                                    <svg class="info-card__icon info-card__icon--black info-card__icon-eye">
+                                                        <use xlink:href="#eye"></use>
+                                                    </svg>
+                                                </span>
+                                                1245
+                                            </div>
+                                            <div class="info-card__item info-card__comments  info-card__item--black">
+                                                <span>
+                                                    <svg class="info-card__icon info-card__icon--black info-card__icon-comment">
+                                                        <use xlink:href="#comment"></use>
+                                                    </svg>
+                                                </span>
+                                                3
+                                            </div>
+                                        </div>
+                                    </div>
+        
+                                    <div class="next-posts__item post-card-2">
+                                        <a class="post-card-2__img-link" href="article.html">
+                                            <img class="post-card-2__img" src="/assets/img/xiaomi-brand.jpg"></img>
+                                        </a>
+                                        <a class="post-card-2__title" href="article.html">Сравнение ручных пылесосов Xiaomi Dreame: V9,
+                                            V9P, V10, V10P, XR</a>
+                                        <div class="info-card">
+                                            <div class="info-card__item info-card__date info-card__item--black">13.05.2020</div>
+                                            <div class="info-card__item info-card__views info-card__item--black">
+                                                <span>
+                                                    <svg class="info-card__icon info-card__icon--black info-card__icon-eye">
+                                                        <use xlink:href="#eye"></use>
+                                                    </svg>
+                                                </span>
+                                                1245
+                                            </div>
+                                            <div class="info-card__item info-card__comments  info-card__item--black">
+                                                <span>
+                                                    <svg class="info-card__icon info-card__icon--black info-card__icon-comment">
+                                                        <use xlink:href="#comment"></use>
+                                                    </svg>
+                                                </span>
+                                                3
+                                            </div>
+                                        </div>
+                                    </div>
+        
+                                    <div class="next-posts__item post-card-2">
+                                        <a class="post-card-2__img-link" href="article.html">
+                                            <img class="post-card-2__img" src="/assets/img/xiaomi-brand.jpg"></img>
+                                        </a>
+                                        <a class="post-card-2__title" href="article.html">Сравнение ручных пылесосов Xiaomi Dreame: V9,
+                                            V9P, V10, V10P, XR</a>
+                                        <div class="info-card">
+                                            <div class="info-card__item info-card__date info-card__item--black">13.05.2020</div>
+                                            <div class="info-card__item info-card__views info-card__item--black">
+                                                <span>
+                                                    <svg class="info-card__icon info-card__icon--black info-card__icon-eye">
+                                                        <use xlink:href="#eye"></use>
+                                                    </svg>
+                                                </span>
+                                                1245
+                                            </div>
+                                            <div class="info-card__item info-card__comments  info-card__item--black">
+                                                <span>
+                                                    <svg class="info-card__icon info-card__icon--black info-card__icon-comment">
+                                                        <use xlink:href="#comment"></use>
+                                                    </svg>
+                                                </span>
+                                                3
+                                            </div>
+                                        </div>
+                                    </div>
+        
+                                    <div class="next-posts__item post-card-2">
+                                        <a class="post-card-2__img-link" href="article.html">
+                                            <img class="post-card-2__img" src="/assets/img/xiaomi-brand.jpg"></img>
+                                        </a>
+                                        <a class="post-card-2__title" href="article.html">Сравнение ручных пылесосов Xiaomi Dreame: V9,
+                                            V9P, V10, V10P, XR</a>
+                                        <div class="info-card">
+                                            <div class="info-card__item info-card__date info-card__item--black">13.05.2020</div>
+                                            <div class="info-card__item info-card__views info-card__item--black">
+                                                <span>
+                                                    <svg class="info-card__icon info-card__icon--black info-card__icon-eye">
+                                                        <use xlink:href="#eye"></use>
+                                                    </svg>
+                                                </span>
+                                                1245
+                                            </div>
+                                            <div class="info-card__item info-card__comments  info-card__item--black">
+                                                <span>
+                                                    <svg class="info-card__icon info-card__icon--black info-card__icon-comment">
+                                                        <use xlink:href="#comment"></use>
+                                                    </svg>
+                                                </span>
+                                                3
+                                            </div>
+                                        </div>
+                                    </div>
+        
+                                    <div class="next-posts__item post-card-2">
+                                        <a class="post-card-2__img-link" href="article.html">
+                                            <img class="post-card-2__img" src="/assets/img/xiaomi-brand.jpg"></img>
+                                        </a>
+                                        <a class="post-card-2__title" href="article.html">Сравнение ручных пылесосов Xiaomi Dreame: V9,
+                                            V9P, V10, V10P, XR</a>
+                                        <div class="info-card">
+                                            <div class="info-card__item info-card__date info-card__item--black">13.05.2020</div>
+                                            <div class="info-card__item info-card__views info-card__item--black">
+                                                <span>
+                                                    <svg class="info-card__icon info-card__icon--black info-card__icon-eye">
+                                                        <use xlink:href="#eye"></use>
+                                                    </svg>
+                                                </span>
+                                                1245
+                                            </div>
+                                            <div class="info-card__item info-card__comments  info-card__item--black">
+                                                <span>
+                                                    <svg class="info-card__icon info-card__icon--black info-card__icon-comment">
+                                                        <use xlink:href="#comment"></use>
+                                                    </svg>
+                                                </span>
+                                                3
+                                            </div>
+                                        </div>
+                                    </div>
+        
+                                    <div class="next-posts__item post-card-2">
+                                        <a class="post-card-2__img-link" href="article.html">
+                                            <img class="post-card-2__img" src="/assets/img/xiaomi-brand.jpg"></img>
+                                        </a>
+                                        <a class="post-card-2__title" href="article.html">Сравнение ручных пылесосов Xiaomi Dreame: V9,
+                                            V9P, V10, V10P, XR</a>
+                                        <div class="info-card">
+                                            <div class="info-card__item info-card__date info-card__item--black">13.05.2020</div>
+                                            <div class="info-card__item info-card__views info-card__item--black">
+                                                <span>
+                                                    <svg class="info-card__icon info-card__icon--black info-card__icon-eye">
+                                                        <use xlink:href="#eye"></use>
+                                                    </svg>
+                                                </span>
+                                                1245
+                                            </div>
+                                            <div class="info-card__item info-card__comments  info-card__item--black">
+                                                <span>
+                                                    <svg class="info-card__icon info-card__icon--black info-card__icon-comment">
+                                                        <use xlink:href="#comment"></use>
+                                                    </svg>
+                                                </span>
+                                                3
+                                            </div>
+                                        </div>
+                                    </div>
+            
+            
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-wrapper__aside aside">
+        
+                        <div class="last-comments">
+                            <div class="aside-heading">
+                                <div class="aside-heading__title">Последние комментарии</div>
+                            </div>
+                            <div class="last-comments__inner">
+        
+                                <div class="last-comments__item aside-comment">
+                                    <img src="assets/img/user-mishka.jpg" alt="" class="aside-comment__avatar">
+                                    <div class="aside-comment__body">
+                                        <span class="aside-comment__username">Сергей</span>
+                                        <span class="aside-comment__time">12 минут назад</span>
+                                        <a class="aside-comment__text" href="#">Когда появится в России?</a>
+                                        <div class="aside-comment__post">Сравнение ручных пылесосов Xiaomi...</div>
+                                    </div>
+                                </div>
+        
+                                <div class="last-comments__item aside-comment">
+                                    <img src="assets/img/user-mishka.jpg" alt="" class="aside-comment__avatar">
+                                    <div class="aside-comment__body">
+                                        <span class="aside-comment__username">Сергей</span>
+                                        <span class="aside-comment__time">12 минут назад</span>
+                                        <a class="aside-comment__text" href="#">Когда появится в России?</a>
+                                        <div class="aside-comment__post">Сравнение ручных пылесосов Xiaomi...</div>
+                                    </div>
+                                </div>
+        
+                                <div class="last-comments__item aside-comment">
+                                    <img src="assets/img/user-mishka.jpg" alt="" class="aside-comment__avatar">
+                                    <div class="aside-comment__body">
+                                        <span class="aside-comment__username">Сергей</span>
+                                        <span class="aside-comment__time">12 минут назад</span>
+                                        <a class="aside-comment__text" href="#">Когда появится в России?</a>
+                                        <div class="aside-comment__post">Сравнение ручных пылесосов Xiaomi...</div>
+                                    </div>
+                                </div>
+        
+                                <div class="last-comments__item aside-comment">
+                                    <img src="assets/img/user-mishka.jpg" alt="" class="aside-comment__avatar">
+                                    <div class="aside-comment__body">
+                                        <span class="aside-comment__username">Сергей</span>
+                                        <span class="aside-comment__time">12 минут назад</span>
+                                        <a class="aside-comment__text" href="#">Когда появится в России?</a>
+                                        <div class="aside-comment__post">Сравнение ручных пылесосов Xiaomi...</div>
+                                    </div>
+                                </div>
+        
+                                <div class="last-comments__item aside-comment">
+                                    <img src="assets/img/user-mishka.jpg" alt="" class="aside-comment__avatar">
+                                    <div class="aside-comment__body">
+                                        <span class="aside-comment__username">Сергей</span>
+                                        <span class="aside-comment__time">12 минут назад</span>
+                                        <a class="aside-comment__text" href="#">Когда появится в России?</a>
+                                        <div class="aside-comment__post">Сравнение ручных пылесосов Xiaomi...</div>
+                                    </div>
+                                </div>
+        
+                            </div>
+                        </div>
+        
+                        <div class="sub-mail">
+                            <svg class="sub-mail__icon">
+                                <use xlink:href="#email"></use>
+                            </svg>
+                            <p class="sub-mail__text">Подпишитесь и узнавайте о новинках и специальных предложениях первыми</p>
+                            <input class="sub-mail__form" type="email" placeholder="Ваш email">
+                            <button class="sub-mail__button button">Подписаться</button>
+                        </div>
+        
+                        <!-- Tags -->
+        
+                        <div class="tags-cloud">
+                            <div class="aside-heading">
+                                <div class="aside-heading__title">Популярные теги</div> 
+                            </div>
+                            <div class="tags-cloud__body">
+                                <a href="#" class="tags-cloud__link">mi 10</a>
+                                <a href="#" class="tags-cloud__link">mi 10</a>
+                                <a href="#" class="tags-cloud__link">redmibook</a>
+                                <a href="#" class="tags-cloud__link">roborock</a>
+                                <a href="#" class="tags-cloud__link">смарт-часы</a>
+                                <a href="#" class="tags-cloud__link">redmi Note 9</a>
+                                <a href="#" class="tags-cloud__link">mi band 5</a>
+                                <a href="#" class="tags-cloud__link">робот-пылесос</a>
+                                <a href="#" class="tags-cloud__link">телевизор</a>
+                                <a href="#" class="tags-cloud__link">amazfit</a>
+                                <a href="#" class="tags-cloud__link">70mai</a>
+                                <a href="#" class="tags-cloud__link">электросамокат</a>
+                                <a href="#" class="tags-cloud__link">наушники</a>
+        
+                                
+                            </div>
+                            
+                        </div>
+        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__item footer__info">
+                    <img src="/assets/img/logofordark-1.svg" alt="" class="logo footer__logo">
+                    
+                </div>
+    
+                <div class="footer__social social">
+                    <a class="social__link" href="#">
+                        <svg class="social__icon social__zen">
+                            <use xlink:href="#zen-f"></use>
+                        </svg>
+                    </a>
+    
+                    <a class="social__link" href="#">
+                        <svg class="social__icon social__instagram">
+                            <use xlink:href="#instagram-f"></use>
+                        </svg>
+                    </a>
+    
+                    <a class="social__link" href="#">
+                        <svg class="social__icon social__facebook">
+                            <use xlink:href="#facebook-f"></use>
+                        </svg>
+                    </a>
+    
+                    <a class="social__link" href="#">
+                        <svg class="social__icon social__vk">
+                            <use xlink:href="#vk-f"></use>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+    
+            <ul class="footer__nav nav-footer">
+                <li class="nav-footer__item"><a class="nav-footer__link" href="news.html">Новости</a></li>
+                <li class="nav-footer__item"><a class="nav-footer__link" href="news.html">Обзоры</a></li>
+                <li class="nav-footer__item"><a class="nav-footer__link" href="news.html">Гайды</a></li>
+            </div>
+    
+            <a href="#" class="button footer__button">В магазин</a>
+        </div>
+        
+        
+    </footer>    <script src="assets/js/app.min.js"></script>
+</body>
+</html>

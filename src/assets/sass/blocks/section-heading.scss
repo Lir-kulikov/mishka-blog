@@ -1,0 +1,52 @@
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $accent-gray;
+    border-radius: $radius;
+
+    &__link {
+        display: inline-block;
+        text-decoration: none;
+        color: $white;
+        padding: .5rem 1rem;
+    }
+
+    &__title {
+        display: inline-block;
+        font-size: 1rem;
+        color: $white;
+        
+        background-color: $accent-orange;
+        border-top-left-radius: $radius;
+        border-bottom-left-radius: $radius;
+    }
+
+    &__filter {
+        margin-right: 10px;
+    }
+
+    &__btn {
+        border-radius: $radius;
+        
+        padding: 5px 7px;
+        font-size: 0.8rem;
+        font-weight: 300;
+        color: $white;
+        text-decoration: none;
+
+        &--active {
+            background-color: $accent-orange;
+        }
+    }
+
+    &--black {
+        border-bottom: 2px solid $accent-gray;
+    }
+
+    @media(max-width: 400px) {
+        &__btn {
+            font-size: .7rem;
+        }
+    }
+}

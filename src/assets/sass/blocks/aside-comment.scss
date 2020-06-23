@@ -1,0 +1,51 @@
+.aside-comment {
+    color: $white;
+    display: flex;
+    border-radius: $radius;
+    padding: .5rem;
+    background-color: lighten($accent-gray,10%);
+
+    &:hover &__text{
+        text-decoration: underline;
+    }
+
+    &__avatar {
+        display: block;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+
+        flex: 0 0 40px;
+    }
+
+    &__body {
+        margin-left: 1rem;
+    }
+
+    &__username {
+        font-size: .9rem;
+        font-weight: 600;
+    }
+
+    &__time {
+        font-size: 0.6rem;
+        color: rgb(218, 218, 218);
+    }
+
+    &__text {
+        display: block;
+        color: $white;
+        text-decoration: none;
+        margin-top: 5px;
+        font-size: .9rem;
+
+        
+    }
+
+    &__post {
+        margin-top: 5px;
+        font-size: .7rem;
+        color: rgb(218, 218, 218);
+    }
+
+}

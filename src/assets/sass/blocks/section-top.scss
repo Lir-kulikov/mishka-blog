@@ -1,0 +1,26 @@
+.section-top {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__title {
+        font-size: 2rem;
+        color: $accent-gray;
+    }
+
+    &__link {
+        text-transform: uppercase;
+        color: $accent-gray;
+        font-size: 1rem;
+        font-weight: 700;
+        border-bottom: 2px solid $accent-gray;
+        text-decoration: none;
+        transition: border .1s linear;
+
+        &:hover {
+            border-bottom: 2px solid $accent-orange;
+            transition: border .1s linear;
+        }
+    }
+}

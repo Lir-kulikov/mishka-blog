@@ -1,0 +1,22 @@
+.grid-sm {
+
+    margin-top: 20px;
+    
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 -2px 4px -2px;
+    }
+
+    &__item {
+        width: 50%;
+        margin: 0 2px;
+        padding-top: 50%;
+
+        &--full {
+            width: 100%;
+            margin: 0 auto;
+        }
+    }
+
+}

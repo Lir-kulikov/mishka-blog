@@ -1,0 +1,35 @@
+.social {
+    display: flex;
+
+    &__link {
+        margin-right: 1rem;
+        &::last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__icon {
+        fill: $light-gray;
+        height: 30px;
+        width: 30px;
+        transition: all .1s linear;
+
+        &:hover {
+            fill: $accent-orange;
+            transition: fill .1s linear;
+        }
+    }
+
+    &__zen {
+        &:hover {
+            filter: drop-shadow(0 0 4px $accent-orange);
+            transition: all .1s linear;
+        }
+        
+    }
+
+    &__facebook {
+        height: 28px;
+        width: 28px;
+    }
+}

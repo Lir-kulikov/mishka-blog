@@ -1,0 +1,27 @@
+.top-line {
+    padding: .8rem 0;
+
+    color: $white;
+    font-size: .8rem;
+
+    background-color: $accent-orange;
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__authorize {
+    }
+
+    &__login {
+        margin-right: 1rem;
+    }
+
+    &__sign-in {
+    }
+
+    &__shop {
+        
+    }
+}

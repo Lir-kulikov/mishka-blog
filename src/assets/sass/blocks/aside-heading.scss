@@ -1,0 +1,16 @@
+.aside-heading {
+    display: block;
+    padding-bottom: 1rem;
+    margin: 0 auto;
+    font-weight: 700;
+    
+
+    &__title {
+        font-size: 16px;
+        color: $white;
+        text-transform: uppercase;
+        &--dark {
+            color: $accent-gray;
+        }
+    }
+}

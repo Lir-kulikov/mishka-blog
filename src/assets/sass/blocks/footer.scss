@@ -1,0 +1,41 @@
+.footer {
+    margin-top: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: $accent-gray;
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo {
+        margin-top: -10px;
+        height: 65px;
+    }
+
+    &__nav {
+
+        display: flex;
+        justify-content: center;
+    }
+
+    &__button {
+        margin: 3rem auto 0 auto;
+        max-width: 200px;
+        text-align: center;
+    }
+
+    @media(max-width: 680px) {
+        &__inner {
+            flex-direction: column;
+        }
+
+        &__social {
+            margin-top: 2rem;
+            
+        }
+    }
+
+}

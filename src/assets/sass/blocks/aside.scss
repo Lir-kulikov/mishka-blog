@@ -1,0 +1,16 @@
+.aside {
+    display: block;
+
+    &__banner {
+        border-radius: $radius;
+        overflow: hidden;
+
+        @media (max-width: 960px) {
+            display: none;
+        }
+
+        & img {
+            border-radius: $radius;
+        }
+    }
+}

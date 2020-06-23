@@ -1,0 +1,54 @@
+.info-card {
+    margin-top: .5rem;
+    display: flex;
+    align-items: center;
+
+    &__item {
+        position: relative;
+        margin-right: 60px;
+        color: $white;
+        font-size: 13px;
+        font-weight: 300;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &--black{
+            color: $accent-gray;
+        }
+
+        @media(max-width: 800px) {
+            margin-right: 40px;
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        top: 0;
+        left: -25px;
+        height: 20px;
+        width: 20px;
+        fill: $white;
+        stroke: $white;
+        stroke-width: 2;
+
+        &--black {
+            fill: #000;
+            stroke: #000;
+        }
+
+        &-comment {
+            top: 2px;
+            width: 18px;
+            height: 18px;
+        }
+    }
+
+    @media(max-width: 680px) {
+        &--hidden {
+            display: none;
+        }
+    }
+
+}

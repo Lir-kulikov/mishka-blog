@@ -1,0 +1,23 @@
+.tags-cloud {
+    padding: 1.5rem;
+    background-color: $accent-gray;
+    margin-top: 20px;
+    border-radius: $radius;
+
+    &__link {
+        font-size: .9rem;
+        color: $light-gray;
+        display: inline-block;
+        padding: 4px 8px;
+        margin: 5px;
+        border: 2px solid lighten($accent-gray,30%);
+        border-radius: $radius;
+        transition: all .1s linear;
+        text-decoration: none;
+
+        &:hover {
+            background-color: lighten($accent-gray,30%);
+            transition: all .1s linear;
+        }
+    }
+}

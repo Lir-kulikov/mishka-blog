@@ -1,0 +1,36 @@
+.post-tags {
+
+    &__item {
+
+    }
+
+    &__title {
+        font-weight: 600;
+    }
+
+
+    &__link {
+        font-size: .9rem;
+        color: $accent-gray;
+        display: inline-block;
+        padding: 0 4px;
+        margin: 5px;
+        border: 2px solid lighten($accent-gray,30%);
+        border-radius: $radius;
+        transition: all .1s linear;
+        text-decoration: none;
+        font-size: .9rem;
+
+        &:hover {
+            background-color: lighten($accent-gray,30%);
+            transition: all .1s linear;
+            color: $light-gray;
+        }
+    }
+
+    @media(max-width: 767px) {
+        &__link {
+            font-size: .8rem;
+        }
+    }
+}

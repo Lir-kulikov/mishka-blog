@@ -1,0 +1,29 @@
+.categories {
+    max-width: 767px;
+    margin: 20px auto 0 auto;
+    background-color: $accent-gray;
+    border-radius: $radius;
+    padding: 1.5rem;
+
+    &__inner {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-right: -5px;
+        margin-left: -5px;
+        
+    }
+
+    &__item {
+        margin: 5px;
+        width: calc(50% - 10px);
+
+        @media(max-width: 960px) {
+            width: calc(25% - 10px);
+        }
+
+        @media(max-width: 550px) {
+            width: calc(50% - 10px);
+        }
+    }
+}

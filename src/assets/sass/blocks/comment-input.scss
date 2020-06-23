@@ -1,0 +1,22 @@
+.comment-input {
+    border-radius: $radius;
+    box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.1);
+    padding: 0 1rem;
+
+    & > * {
+        display: block;
+        width: 100%;
+        padding: .8rem 0;
+        outline: none;
+    }
+
+    &__name {
+        border: none;
+        border-bottom: 1px solid #d4d6d7;
+    }
+
+    &__message {
+        border: none;
+        resize: none;
+    }
+}

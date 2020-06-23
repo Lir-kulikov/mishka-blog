@@ -1,0 +1,15 @@
+.last-comments {
+    background-color: $accent-gray;
+    border-radius: $radius;
+    padding: 1.5rem;
+
+
+    &__item {
+        margin-bottom: 4px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+

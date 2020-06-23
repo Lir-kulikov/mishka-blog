@@ -1,0 +1,42 @@
+.new-comment {
+
+    &__top {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__user {
+        display: flex;
+        align-items: center;
+    }
+
+    &__avatar {
+        margin-right: 1rem;
+        display: block;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+
+        flex: 0 0 40px;
+    }
+
+    &__username {
+        font-weight: 600;
+    }
+
+    &__login {
+        cursor: pointer;
+        transition: color .1s linear;
+
+        &:hover {
+            color: $accent-orange;
+            transition: color .1s linear;
+        }
+    }
+
+    &__input-wrapper {
+        margin-top: 1rem;
+    }
+}

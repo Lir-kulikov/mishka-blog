@@ -1,0 +1,71 @@
+@import "vars";
+@import "reset";
+
+/* Default styles */
+
+body {
+    background-color: $white;
+    font-size: 16px;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    line-height: 1.5;
+    color: $accent-gray;
+
+    &.lock {
+        overflow: hidden;
+    }
+}
+
+.container {
+    max-width: 1020px;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    @media(max-width: 1020px) {
+         &--disable {
+             padding: 0;
+         }
+     }
+}
+
+/* Blocks */
+
+@import "blocks/header.scss";
+@import "blocks/top-line.scss";
+@import "blocks/nav.scss";
+@import "blocks/logo.scss";
+@import "blocks/main-grid";
+@import "blocks/post-card.scss";
+@import "blocks/post-card-2.scss";
+@import "blocks/info-card.scss";
+@import "blocks/content-wrapper.scss";
+@import "blocks/section-heading.scss";
+@import "blocks/news.scss";
+@import "blocks/news-grid.scss";
+@import "blocks/reviews.scss";
+@import "blocks/reviews-grid-top.scss";
+@import "blocks/reviews-grid-bot.scss";
+@import "blocks/aside.scss";
+@import "blocks/aside-heading.scss";
+@import "blocks/sub-mail.scss";
+@import "blocks/categories.scss";
+@import "blocks/item-category.scss";
+@import "blocks/guides.scss";
+@import "blocks/grid-sm.scss";
+@import "blocks/tags-cloud.scss";
+@import "blocks/footer.scss";
+@import "blocks/social.scss";
+@import "blocks/search.scss";
+@import "blocks/menu-burger.scss";
+@import "blocks/nav-footer.scss";
+@import "blocks/button.scss";
+@import "blocks/bread-crumbs.scss";
+@import "blocks/article.scss";
+@import "blocks/last-comments.scss";
+@import "blocks/aside-comment.scss";
+@import "blocks/post-tags.scss";
+@import "blocks/share.scss";
+@import "blocks/new-comment.scss";
+@import "blocks/comment-input.scss";
+@import "blocks/article-comments.scss";
+@import "blocks/next-posts.scss";
